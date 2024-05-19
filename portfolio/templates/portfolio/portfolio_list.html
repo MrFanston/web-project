@@ -1,0 +1,14 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Portfolio</h1>
+<ul>
+    {% for item in items %}
+        <li>
+            <strong>{{ item.achievements }}</strong><br>
+            {{ item.description }}
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
