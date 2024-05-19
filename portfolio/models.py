@@ -3,8 +3,7 @@ from django.contrib.auth.models import User
 
 class Portfolio(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    achievements = models.CharField(max_length=255)
-    description = models.TextField()
+    description = models.TextField(verbose_name='Содержимое')
 
     def __str__(self):
-        return self.achievements
+        return self.user.username + "'s Portfolio"

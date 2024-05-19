@@ -1,10 +1,11 @@
-from django.forms import ModelForm, Textarea
+# forms.py
+from django import forms
 from .models import Portfolio
+from tinymce.widgets import TinyMCE
 
-class PortfolioForm(ModelForm):
+class PortfolioForm(forms.ModelForm):
     class Meta:
         model = Portfolio
-        fields = ['achievements', 'description']
-        widgets = {
-            'description': Textarea(attrs={'id': 'default-editor'}),
-        }
+        fields = ['description']
+        widgets = {'description': TinyMCE(attrs={'cols': 80, 'rows': 30})}
+
